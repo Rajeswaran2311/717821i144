@@ -82,7 +82,7 @@ app.get('/numbers/:numberid', async (request, response) => {
   const average = calculateAverage();
   response.json({
     numbers: fetchedNumbers,
-    windowPrevState: [],
+     windowPrevState: numbersWindow.slice(0, numbersWindow.length - fetchedNumbers.length),
     windowCurrState: numbersWindow,
     avg: average.toFixed(2)
   });
